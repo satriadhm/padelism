@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Court Marketplace (Padelism)
 
-## Getting Started
+A multi-tenant court booking marketplace built with Next.js. Venue owners can list their sports courts, and customers can discover, book, and pay for court time online.
 
-First, run the development server:
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Database:** MongoDB with Mongoose ODM
+- **Authentication:** NextAuth.js
+- **Styling:** Tailwind CSS
+- **Payments:** Midtrans integration + cash payments
+
+## Prerequisites
+
+- **Node.js** >= 18
+- **MongoDB** (local or Atlas)
+
+## Setup
 
 ```bash
+# 1. Clone the repository
+git clone <repo-url> && cd padelism
+
+# 2. Install dependencies
+npm install
+
+# 3. Create environment file
+cp .env.example .env.local
+# Edit .env.local with your values:
+#   MONGODB_URI=mongodb://localhost:27017/court-marketplace
+#   NEXTAUTH_SECRET=your-secret
+#   NEXTAUTH_URL=http://localhost:3000
+
+# 4. Seed the database (optional, for development)
+npx tsx scripts/seed.ts
+
+# 5. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npx tsx scripts/seed.ts` | Seed database with test data |
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # Next.js App Router pages & API routes
+│   ├── api/              # REST API endpoints
+│   ├── (auth)/           # Auth pages (login, register)
+│   └── ...               # Feature pages
+├── components/           # Reusable React components
+├── hooks/                # Custom React hooks
+│   ├── useAvailableSlots.ts  # Fetch court time slots
+│   └── useBooking.ts         # Create/cancel bookings
+├── lib/                  # Utilities (DB connection, auth config)
+├── models/               # Mongoose models
+│   ├── User.ts
+│   ├── Venue.ts
+│   ├── Court.ts
+│   ├── SportType.ts
+│   ├── Booking.ts
+│   ├── Payment.ts
+│   └── Notification.ts
+├── types/                # TypeScript type definitions
+└── middleware.ts          # Route protection middleware
+scripts/
+└── seed.ts               # Database seed script
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Default Test Credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After running the seed script:
 
-## Deploy on Vercel
+| Role | Email | Password |
+|------|-------|----------|
+| Super Admin | admin@courtmarket.com | admin123 |
+| Venue Owner | budi@venue.com | owner123 |
+| Staff | agus@staff.com | staff123 |
+| Customer | siti@customer.com | customer123 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Routes Overview
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/auth/[...nextauth]` | Authentication (NextAuth) |
+| GET | `/api/courts` | List courts |
+| GET | `/api/courts/:id/slots?date=` | Get available slots |
+| POST | `/api/bookings` | Create a booking |
+| POST | `/api/bookings/:id/cancel` | Cancel a booking |
+| GET | `/api/venues` | List venues |
+| GET/POST | `/api/sport-types` | Sport types CRUD |
+
+## Roles
+
+| Role | Description |
+|------|-------------|
+| **super_admin** | Full platform access, manage all venues and users |
+| **venue_owner** | Manage own venues, courts, bookings, and staff |
+| **staff** | Check-in customers, view assigned venue bookings |
+| **customer** | Browse venues, book courts, manage own bookings |
+
+## Deployment
+
+Deploy on [Vercel](https://vercel.com) or any platform supporting Next.js. Set the required environment variables in your hosting provider's dashboard.
+
+## License
+
+Private — All rights reserved.
