@@ -35,7 +35,7 @@ export default function SlotPicker({ slots, selectedSlot, onSelect, className }:
               slot.isAvailable &&
                 !isSelected &&
                 'border-green-200 bg-green-50 text-gray-800 hover:border-green-400',
-              isSelected && 'border-[#16a34a] bg-blue-50 text-[#16a34a] ring-2 ring-[#16a34a]/30',
+              isSelected && 'border-blue-500 bg-blue-50 text-blue-700 ring-2 ring-blue-300',
             )}
           >
             <span className="font-medium">
