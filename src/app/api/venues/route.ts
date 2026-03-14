@@ -63,10 +63,16 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
 
-    const slug = body.name
+    const baseSlug = body.name
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '');
+
+    let slug = baseSlug;
+    const existingSlug = await Venue.findOne({ slug });
+    if (existingSlug) {
+      slug = `${baseSlug}-${Date.now()}`;
+    }
 
     const venue = await Venue.create({
       ...body,

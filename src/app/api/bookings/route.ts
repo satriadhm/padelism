@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import dbConnect from '@/lib/mongodb';
@@ -94,12 +95,12 @@ export async function POST(request: NextRequest) {
     }
 
     const endTime = addMinutesToTime(startTime, durationMinutes);
-    const totalAmount = calculatePrice(court, date, startTime, durationMinutes);
     const dateObj = new Date(date + 'T00:00:00.000Z');
+    const totalAmount = calculatePrice(court, dateObj, startTime, durationMinutes);
 
     // Generate booking code: BK-YYYYMMDD-XXXXX
     const dateCode = date.replace(/-/g, '');
-    const randomChars = Math.random().toString(36).substring(2, 7).toUpperCase();
+    const randomChars = crypto.randomBytes(4).toString('hex').substring(0, 5).toUpperCase();
     const bookingCode = `BK-${dateCode}-${randomChars}`;
 
     const qrCode = `QR-${bookingCode}`;
