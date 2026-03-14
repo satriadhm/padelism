@@ -84,10 +84,7 @@ export default function BookingPage({
     if (!date || !duration) return;
     setSlotsLoading(true);
     try {
-      const params = new URLSearchParams({
-        date,
-        duration: String(duration),
-      });
+      const params = new URLSearchParams({ date });
       const res = await fetch(`/api/courts/${courtId}/slots?${params}`);
       if (!res.ok) throw new Error('Failed to fetch slots');
       const data = await res.json();

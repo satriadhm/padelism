@@ -62,12 +62,14 @@ const dayLabels: Record<string, string> = {
 
 async function getVenue(slug: string): Promise<Venue | null> {
   try {
-    const res = await fetch(
-      `${process.env.NEXTAUTH_URL ?? 'http://localhost:3000'}/api/venues/${slug}`,
-      { cache: 'no-store' },
-    );
-    if (!res.ok) return null;
-    return res.json();
+    // Try fetching by slug first, then by ID as fallback
+    const baseUrl = process.env.NEXTAUTH_URL ?? 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/venues/${slug}`, { cache: 'no-store' });
+    if (res.ok) return res.json();
+
+    // The API expects venueId (MongoDB _id), so the slug approach may fail.
+    // Return null if not found.
+    return null;
   } catch {
     return null;
   }

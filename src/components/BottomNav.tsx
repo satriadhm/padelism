@@ -19,7 +19,7 @@ interface NavItem {
 const customerItems: NavItem[] = [
   { href: '/', label: 'Home', icon: <Home className="h-5 w-5" /> },
   { href: '/venues', label: 'Cari', icon: <Search className="h-5 w-5" /> },
-  { href: '/bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
+  { href: '/my-bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
   { href: '/profile', label: 'Profil', icon: <User className="h-5 w-5" /> },
 ];
 

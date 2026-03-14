@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { CheckCircle2, Copy, CalendarDays } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
@@ -123,25 +122,13 @@ export default function BookingConfirmationPage() {
             <p className="mt-1 text-xs text-[#16a34a]">Kode berhasil disalin!</p>
           )}
 
-          {/* QR Code display */}
-          {booking.qrCode ? (
-            <div className="mt-4">
-              <Image
-                src={booking.qrCode}
-                alt="QR Code Booking"
-                width={128}
-                height={128}
-                className="mx-auto"
-              />
+          {/* QR Code placeholder */}
+          <div className="mx-auto mt-4 flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
+            <div className="text-center">
+              <p className="text-[10px] font-mono text-gray-400">QR</p>
+              <p className="text-lg font-bold text-gray-400">{booking.bookingCode}</p>
             </div>
-          ) : (
-            <div className="mx-auto mt-4 flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
-              <div className="text-center">
-                <p className="text-[10px] font-mono text-gray-400">QR</p>
-                <p className="text-lg font-bold text-gray-400">{booking.bookingCode}</p>
-              </div>
-            </div>
-          )}
+          </div>
         </Card>
 
         {/* Details Card */}
