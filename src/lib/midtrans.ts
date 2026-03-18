@@ -26,7 +26,7 @@ export async function createSnapToken(params: MidtransSnapParams): Promise<{ tok
     clientKey: process.env.MIDTRANS_CLIENT_KEY!,
   });
 
-  return await snap.createTransaction(params);
+  return await snap.createTransaction(params as unknown as Record<string, unknown>);
 }
 
 export function verifyWebhookSignature(
