@@ -20,7 +20,7 @@ export default function StaffLayout({ children }: { children: ReactNode }) {
   if (status === 'loading') {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
       </div>
     );
   }
@@ -34,7 +34,7 @@ export default function StaffLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-20 border-b border-gray-200 bg-white shadow-sm">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#16a34a] text-sm font-bold text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-brand-600)] text-sm font-bold text-white">
               P
             </div>
             <div>

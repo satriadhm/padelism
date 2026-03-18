@@ -44,7 +44,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
       <Card className="w-full max-w-md" padding="lg">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#16a34a]">
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-brand-600)]">
             <span className="text-2xl font-bold text-white">P</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Masuk ke Akun Anda</h1>
@@ -87,7 +87,7 @@ export default function LoginPage() {
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Belum punya akun?{' '}
-          <Link href="/register" className="font-medium text-[#16a34a] hover:underline">
+          <Link href="/register" className="font-medium text-[var(--color-brand-700)] hover:underline">
             Daftar sekarang
           </Link>
         </p>

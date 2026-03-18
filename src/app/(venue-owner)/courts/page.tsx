@@ -78,7 +78,10 @@ export default function CourtsPage() {
         <Card className="py-16 text-center">
           <MapPin className="mx-auto mb-3 h-10 w-10 text-gray-300" />
           <p className="text-sm text-gray-500">Belum ada lapangan.</p>
-          <Link href="/courts/new" className="mt-3 inline-block text-sm font-medium text-[#16a34a] hover:underline">
+          <Link
+            href="/courts/new"
+            className="mt-3 inline-block text-sm font-medium text-[var(--color-brand-700)] hover:underline"
+          >
             Tambah lapangan pertama
           </Link>
         </Card>

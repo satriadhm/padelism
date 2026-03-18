@@ -65,7 +65,7 @@ export default function BottomNav({ role }: BottomNavProps) {
                 href={item.href}
                 className={cn(
                   'flex flex-col items-center gap-0.5 px-3 py-2 text-[10px] font-medium transition-colors',
-                  isActive ? 'text-[#16a34a]' : 'text-gray-400 hover:text-gray-600',
+                  isActive ? 'text-[var(--color-brand-700)]' : 'text-gray-400 hover:text-gray-600',
                 )}
               >
                 {item.icon}

@@ -170,7 +170,7 @@ export default function VenueSettingsPage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={3}
-                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
               />
             </div>
             <Input label="Alamat" value={street} onChange={(e) => setStreet(e.target.value)} />
@@ -197,7 +197,7 @@ export default function VenueSettingsPage() {
                     type="checkbox"
                     checked={operatingHours[key]?.isOpen ?? true}
                     onChange={(e) => updateHour(key, 'isOpen', e.target.checked)}
-                    className="h-4 w-4 rounded border-gray-300 text-[#16a34a] focus:ring-[#22c55e]"
+                    className="h-4 w-4 rounded border-gray-300 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
                   />
                   {DAY_LABELS[i]}
                 </label>
@@ -207,14 +207,14 @@ export default function VenueSettingsPage() {
                       type="time"
                       value={operatingHours[key]?.openTime ?? '07:00'}
                       onChange={(e) => updateHour(key, 'openTime', e.target.value)}
-                      className="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                      className="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
                     />
                     <span className="text-sm text-gray-400">–</span>
                     <input
                       type="time"
                       value={operatingHours[key]?.closeTime ?? '22:00'}
                       onChange={(e) => updateHour(key, 'closeTime', e.target.value)}
-                      className="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                      className="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
                     />
                   </div>
                 )}
@@ -233,7 +233,7 @@ export default function VenueSettingsPage() {
             {facilities.map((f) => (
               <span
                 key={f}
-                className="inline-flex items-center gap-1 rounded-full bg-[#16a34a]/10 px-3 py-1 text-sm text-[#16a34a]"
+                className="inline-flex items-center gap-1 rounded-full bg-[var(--color-brand-50)] px-3 py-1 text-sm text-[var(--color-brand-700)]"
               >
                 {f}
                 <button type="button" onClick={() => removeFacility(f)} className="hover:text-red-500">

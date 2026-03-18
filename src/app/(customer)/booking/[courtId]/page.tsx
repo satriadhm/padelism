@@ -166,7 +166,7 @@ export default function BookingPage({
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
       </div>
     );
   }
@@ -212,15 +212,15 @@ export default function BookingPage({
               <div
                 key={s.label}
                 className={`flex flex-1 flex-col items-center gap-1 text-xs font-medium ${
-                  i <= step ? 'text-[#16a34a]' : 'text-gray-400'
+                  i <= step ? 'text-[var(--color-brand-700)]' : 'text-gray-400'
                 }`}
               >
                 <div
                   className={`flex h-8 w-8 items-center justify-center rounded-full ${
                     i < step
-                      ? 'bg-[#16a34a] text-white'
+                      ? 'bg-[var(--color-brand-600)] text-white'
                       : i === step
-                        ? 'border-2 border-[#16a34a] text-[#16a34a]'
+                        ? 'border-2 border-[var(--color-brand-600)] text-[var(--color-brand-700)]'
                         : 'border-2 border-gray-300 text-gray-400'
                   }`}
                 >
@@ -248,7 +248,7 @@ export default function BookingPage({
               value={date}
               min={today}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
             />
           </Card>
         )}
@@ -265,7 +265,7 @@ export default function BookingPage({
                   onClick={() => setDuration(opt.value)}
                   className={`rounded-lg border-2 px-4 py-4 text-center text-sm font-medium transition-colors ${
                     duration === opt.value
-                      ? 'border-[#16a34a] bg-green-50 text-[#16a34a]'
+                      ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)] text-[var(--color-brand-700)]'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300'
                   }`}
                 >
@@ -313,7 +313,7 @@ export default function BookingPage({
                 <label
                   className={`flex cursor-pointer items-center gap-3 rounded-lg border-2 p-4 transition-colors ${
                     paymentMethod === 'midtrans'
-                      ? 'border-[#16a34a] bg-green-50'
+                      ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)]'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -323,7 +323,7 @@ export default function BookingPage({
                     value="midtrans"
                     checked={paymentMethod === 'midtrans'}
                     onChange={() => setPaymentMethod('midtrans')}
-                    className="h-4 w-4 text-[#16a34a] focus:ring-[#16a34a]"
+                    className="h-4 w-4 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
                   />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Transfer Online (Midtrans)</p>
@@ -336,7 +336,7 @@ export default function BookingPage({
                 <label
                   className={`flex cursor-pointer items-center gap-3 rounded-lg border-2 p-4 transition-colors ${
                     paymentMethod === 'cash'
-                      ? 'border-[#16a34a] bg-green-50'
+                      ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)]'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -346,7 +346,7 @@ export default function BookingPage({
                     value="cash"
                     checked={paymentMethod === 'cash'}
                     onChange={() => setPaymentMethod('cash')}
-                    className="h-4 w-4 text-[#16a34a] focus:ring-[#16a34a]"
+                    className="h-4 w-4 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
                   />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Bayar di Tempat (Cash)</p>
@@ -389,7 +389,7 @@ export default function BookingPage({
             />
 
             <Card padding="lg" className="text-center">
-              <CheckCircle2 className="mx-auto h-10 w-10 text-[#16a34a]" />
+              <CheckCircle2 className="mx-auto h-10 w-10 text-[var(--color-brand-700)]" />
               <h3 className="mt-2 text-lg font-semibold text-gray-900">
                 Konfirmasi Booking Anda
               </h3>

@@ -72,13 +72,13 @@ function getEmailTemplate(title: string, content: string): string {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="margin:0;padding:0;background-color:#f0fdf4;font-family:'Inter',Arial,sans-serif;">
+    <body style="margin:0;padding:0;background-color:#f6f7f8;font-family:'Inter',Arial,sans-serif;">
       <div style="max-width:600px;margin:0 auto;padding:20px;">
-        <div style="background-color:#16a34a;padding:20px;text-align:center;border-radius:12px 12px 0 0;">
+        <div style="background-color:#1f7a4b;padding:20px;text-align:center;border-radius:12px 12px 0 0;">
           <h1 style="color:white;margin:0;font-size:24px;">🏸 Court Marketplace</h1>
         </div>
         <div style="background-color:white;padding:30px;border-radius:0 0 12px 12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
-          <h2 style="color:#16a34a;margin-top:0;">${title}</h2>
+          <h2 style="color:#185f3a;margin-top:0;">${title}</h2>
           <div style="color:#374151;line-height:1.6;">
             ${content}
           </div>

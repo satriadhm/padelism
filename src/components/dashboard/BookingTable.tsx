@@ -61,7 +61,7 @@ export default function BookingTable({ bookings, onAction, className }: BookingT
                     <button
                       type="button"
                       onClick={() => onAction(b.id, 'view')}
-                      className="text-[#16a34a] hover:underline"
+                      className="text-[var(--color-brand-700)] hover:underline"
                     >
                       Detail
                     </button>
@@ -93,7 +93,7 @@ export default function BookingTable({ bookings, onAction, className }: BookingT
               <button
                 type="button"
                 onClick={() => onAction(b.id, 'view')}
-                className="mt-3 text-sm font-medium text-[#16a34a] hover:underline"
+                className="mt-3 text-sm font-medium text-[var(--color-brand-700)] hover:underline"
               >
                 Lihat Detail
               </button>

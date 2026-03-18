@@ -110,7 +110,7 @@ function VenuesContent() {
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-              className="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-3 text-sm placeholder:text-gray-400 focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+              className="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-3 text-sm placeholder:text-gray-400 focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
             />
           </div>
           <button
@@ -136,7 +136,7 @@ function VenuesContent() {
                 <h3 className="text-sm font-semibold text-gray-900">Filter</h3>
                 <button
                   onClick={clearFilters}
-                  className="text-xs text-[#16a34a] hover:underline"
+                  className="text-xs text-[var(--color-brand-700)] hover:underline"
                 >
                   Reset
                 </button>
@@ -162,7 +162,7 @@ function VenuesContent() {
                         type="checkbox"
                         checked={selectedSports.includes(sport.value)}
                         onChange={() => toggleSport(sport.value)}
-                        className="h-4 w-4 rounded border-gray-300 text-[#16a34a] focus:ring-[#16a34a]"
+                        className="h-4 w-4 rounded border-gray-300 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
                       />
                       <span
                         className="inline-block h-2.5 w-2.5 rounded-full"
@@ -186,7 +186,7 @@ function VenuesContent() {
             {(city || selectedSports.length > 0) && (
               <div className="mb-4 flex flex-wrap gap-2">
                 {city && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-[#16a34a]">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-brand-50)] px-3 py-1 text-xs font-medium text-[var(--color-brand-700)]">
                     📍 {city}
                     <button onClick={() => setCity('')}>
                       <X className="h-3 w-3" />
@@ -196,7 +196,7 @@ function VenuesContent() {
                 {selectedSports.map((s) => (
                   <span
                     key={s}
-                    className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-[#16a34a]"
+                    className="inline-flex items-center gap-1 rounded-full bg-[var(--color-brand-50)] px-3 py-1 text-xs font-medium text-[var(--color-brand-700)]"
                   >
                     {sportOptions.find((o) => o.value === s)?.label ?? s}
                     <button onClick={() => toggleSport(s)}>
@@ -248,7 +248,7 @@ export default function VenuesPage() {
     <Suspense
       fallback={
         <div className="flex min-h-screen items-center justify-center bg-gray-50">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
         </div>
       }
     >

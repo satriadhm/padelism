@@ -83,7 +83,7 @@ export default function CheckInPage() {
   return (
     <div className="mx-auto max-w-lg space-y-6">
       <div className="text-center">
-        <QrCode className="mx-auto mb-2 h-10 w-10 text-[#16a34a]" />
+        <QrCode className="mx-auto mb-2 h-10 w-10 text-[var(--color-brand-700)]" />
         <h1 className="text-2xl font-bold text-gray-900">Check-in</h1>
         <p className="text-sm text-gray-500">Masukkan kode booking untuk melakukan check-in</p>
       </div>
@@ -144,7 +144,7 @@ export default function CheckInPage() {
           </div>
 
           {success ? (
-            <div className="flex items-center justify-center gap-2 rounded-lg bg-green-50 p-4 text-green-700">
+            <div className="flex items-center justify-center gap-2 rounded-lg bg-[var(--color-brand-50)] p-4 text-[var(--color-brand-700)]">
               <CheckCircle2 className="h-5 w-5" />
               <span className="font-medium">Check-in berhasil!</span>
             </div>

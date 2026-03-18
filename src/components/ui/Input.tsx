@@ -24,7 +24,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             'block w-full rounded-lg border px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-0',
             error
               ? 'border-red-300 focus:border-red-500 focus:ring-red-200'
-              : 'border-gray-300 focus:border-[#16a34a] focus:ring-[#22c55e]/30',
+              : 'border-gray-300 focus:border-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]',
             className,
           )}
           aria-invalid={!!error}

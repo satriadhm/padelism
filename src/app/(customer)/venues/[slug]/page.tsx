@@ -253,7 +253,7 @@ export default async function VenueDetailPage({
                           {lowestPrice > 0 && (
                             <div className="text-right">
                               <p className="text-xs text-gray-500">Mulai dari</p>
-                              <p className="font-bold text-[#16a34a]">
+                              <p className="font-semibold text-[var(--color-brand-700)]">
                                 {formatCurrency(lowestPrice)}
                               </p>
                             </div>

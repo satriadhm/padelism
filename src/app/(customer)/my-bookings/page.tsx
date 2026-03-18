@@ -122,7 +122,7 @@ export default function MyBookingsPage() {
               onClick={() => setTab(t.key)}
               className={`flex-1 border-b-2 py-3 text-center text-sm font-medium transition-colors ${
                 tab === t.key
-                  ? 'border-[#16a34a] text-[#16a34a]'
+                  ? 'border-[var(--color-brand-600)] text-[var(--color-brand-700)]'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -169,7 +169,7 @@ export default function MyBookingsPage() {
                 </div>
 
                 <div className="mt-3 flex items-center justify-between">
-                  <span className="font-semibold text-[#16a34a]">
+                  <span className="font-semibold text-[var(--color-brand-700)]">
                     {formatCurrency(booking.totalAmount)}
                   </span>
                   {tab === 'upcoming' &&

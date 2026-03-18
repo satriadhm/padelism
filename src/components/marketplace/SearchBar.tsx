@@ -51,7 +51,7 @@ export default function SearchBar({
           placeholder="Cari kota..."
           value={city}
           onChange={(e) => onCityChange(e.target.value)}
-          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function SearchBar({
           id="search-sport"
           value={sport}
           onChange={(e) => onSportChange(e.target.value)}
-          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
         >
           {sportOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -82,14 +82,14 @@ export default function SearchBar({
           type="date"
           value={date}
           onChange={(e) => onDateChange(e.target.value)}
-          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+          className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
         />
       </div>
 
       <button
         type="button"
         onClick={onSubmit}
-        className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#16a34a] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[#15803d]"
+        className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-brand-600)] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-brand-700)]"
       >
         <Search className="h-4 w-4" />
         Cari

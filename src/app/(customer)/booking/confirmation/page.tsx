@@ -70,7 +70,7 @@ function BookingConfirmationContent() {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
       </div>
     );
   }
@@ -95,7 +95,7 @@ function BookingConfirmationContent() {
         {/* Success header */}
         <div className="mb-6 text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-            <CheckCircle2 className="h-9 w-9 text-[#16a34a]" />
+            <CheckCircle2 className="h-9 w-9 text-[var(--color-brand-700)]" />
           </div>
           <h1 className="mt-4 text-2xl font-bold text-gray-900">Booking Berhasil!</h1>
           <p className="mt-1 text-sm text-gray-500">
@@ -119,7 +119,7 @@ function BookingConfirmationContent() {
             </button>
           </div>
           {copied && (
-            <p className="mt-1 text-xs text-[#16a34a]">Kode berhasil disalin!</p>
+            <p className="mt-1 text-xs text-[var(--color-brand-700)]">Kode berhasil disalin!</p>
           )}
 
           {/* QR Code placeholder */}
@@ -164,7 +164,9 @@ function BookingConfirmationContent() {
             <hr className="border-gray-200" />
             <div className="flex justify-between">
               <dt className="font-semibold text-gray-900">Total</dt>
-              <dd className="font-bold text-[#16a34a]">{formatCurrency(booking.totalAmount)}</dd>
+              <dd className="font-semibold text-[var(--color-brand-700)]">
+                {formatCurrency(booking.totalAmount)}
+              </dd>
             </div>
           </dl>
         </Card>
@@ -193,7 +195,7 @@ export default function BookingConfirmationPage() {
     <Suspense
       fallback={
         <div className="flex min-h-screen items-center justify-center bg-gray-50">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
         </div>
       }
     >

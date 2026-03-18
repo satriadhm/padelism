@@ -62,7 +62,9 @@ export default function BookingSummary({
 
         <div className="flex justify-between">
           <dt className="text-base font-semibold text-gray-900">Total</dt>
-          <dd className="text-base font-bold text-[#16a34a]">{formatCurrency(totalPrice)}</dd>
+          <dd className="text-base font-semibold text-[var(--color-brand-700)]">
+            {formatCurrency(totalPrice)}
+          </dd>
         </div>
       </dl>
     </Card>

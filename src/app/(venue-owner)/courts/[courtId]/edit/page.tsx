@@ -255,7 +255,7 @@ export default function EditCourtPage() {
               <select
                 value={sportTypeId}
                 onChange={(e) => setSportTypeId(e.target.value)}
-                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
                 required
               >
                 <option value="">Pilih olahraga</option>
@@ -272,7 +272,7 @@ export default function EditCourtPage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={3}
-                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
               />
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function EditCourtPage() {
                 type="checkbox"
                 checked={isIndoor}
                 onChange={(e) => setIsIndoor(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#16a34a] focus:ring-[#22c55e]"
+                className="h-4 w-4 rounded border-gray-300 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
               />
               Indoor
             </label>
@@ -311,7 +311,7 @@ export default function EditCourtPage() {
                 type="checkbox"
                 checked={cashOnArrival}
                 onChange={(e) => setCashOnArrival(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#16a34a] focus:ring-[#22c55e]"
+                className="h-4 w-4 rounded border-gray-300 text-[var(--color-brand-600)] focus:ring-[var(--color-brand-ring)]"
               />
               Bayar di Tempat (Cash)
             </label>
@@ -333,7 +333,7 @@ export default function EditCourtPage() {
                     className={cn(
                       'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
                       allowedDurations.includes(dur)
-                        ? 'border-[#16a34a] bg-[#16a34a]/10 text-[#16a34a]'
+                        ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)] text-[var(--color-brand-700)]'
                         : 'border-gray-300 text-gray-600 hover:bg-gray-50',
                     )}
                   >
@@ -349,7 +349,7 @@ export default function EditCourtPage() {
                 <select
                   value={bufferTime}
                   onChange={(e) => setBufferTime(Number(e.target.value))}
-                  className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30"
+                  className="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[var(--color-brand-600)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)]"
                 >
                   {BUFFER_OPTIONS.map((b) => (
                     <option key={b} value={b}>
@@ -385,7 +385,7 @@ export default function EditCourtPage() {
                     className={cn(
                       'rounded-md border px-3 py-1.5 text-xs font-medium transition-colors',
                       slotStartTimes.includes(time)
-                        ? 'border-[#16a34a] bg-[#16a34a]/10 text-[#16a34a]'
+                        ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)] text-[var(--color-brand-700)]'
                         : 'border-gray-200 text-gray-500 hover:bg-gray-50',
                     )}
                   >
@@ -438,7 +438,7 @@ export default function EditCourtPage() {
                         className={cn(
                           'h-9 w-9 rounded-full text-xs font-medium transition-colors',
                           rule.daysOfWeek.includes(di)
-                            ? 'bg-[#16a34a] text-white'
+                            ? 'bg-[var(--color-brand-600)] text-white'
                             : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
                         )}
                       >

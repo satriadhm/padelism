@@ -64,7 +64,9 @@ export default function VenueCard({
             </div>
             <div className="text-sm">
               <span className="text-gray-500">Mulai </span>
-              <span className="font-semibold text-[#16a34a]">{formatCurrency(startingPrice)}</span>
+              <span className="font-semibold text-[var(--color-brand-700)]">
+                {formatCurrency(startingPrice)}
+              </span>
             </div>
           </div>
         </div>

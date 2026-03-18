@@ -129,8 +129,8 @@ export default function AdminSportsPage() {
                   <td className="px-4 py-3">
                     <button onClick={() => toggleActive(sport._id, sport.isActive)}
                       disabled={togglingId === sport._id}
-                      className={cn('relative h-6 w-11 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30 focus:ring-offset-2 disabled:opacity-50',
-                        sport.isActive ? 'bg-[#16a34a]' : 'bg-gray-300')}>
+                      className={cn('relative h-6 w-11 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-ring)] focus:ring-offset-2 disabled:opacity-50',
+                        sport.isActive ? 'bg-[var(--color-brand-600)]' : 'bg-gray-300')}>
                       <span className={cn('absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform',
                         sport.isActive ? 'translate-x-5' : 'translate-x-0')} />
                     </button>

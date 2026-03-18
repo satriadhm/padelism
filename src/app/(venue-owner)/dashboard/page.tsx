@@ -154,7 +154,7 @@ export default function VenueOwnerDashboardPage() {
               <Tooltip
                 formatter={(value) => [formatCurrency(Number(value)), 'Pendapatan']}
               />
-              <Bar dataKey="revenue" fill="#16a34a" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="revenue" fill="var(--color-brand-600)" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

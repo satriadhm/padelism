@@ -34,8 +34,9 @@ export default function SlotPicker({ slots, selectedSlot, onSelect, className }:
               !slot.isAvailable && 'cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400',
               slot.isAvailable &&
                 !isSelected &&
-                'border-green-200 bg-green-50 text-gray-800 hover:border-green-400',
-              isSelected && 'border-blue-500 bg-blue-50 text-blue-700 ring-2 ring-blue-300',
+                'border-gray-200 bg-[var(--color-brand-50)] text-gray-800 hover:border-gray-300',
+              isSelected &&
+                'border-[var(--color-brand-600)] bg-[var(--color-brand-100)] text-gray-900 ring-2 ring-[var(--color-brand-ring)]',
             )}
           >
             <span className="font-medium">

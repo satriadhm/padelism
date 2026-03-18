@@ -41,7 +41,7 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
   if (status === 'loading') {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[var(--color-brand-600)] border-t-transparent" />
       </div>
     );
   }
@@ -64,7 +64,7 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
         )}
       >
         <div className="flex h-16 items-center gap-3 border-b border-gray-800 px-6">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#16a34a] text-sm font-bold text-white">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-brand-600)] text-sm font-bold text-white">
             P
           </div>
           <div className="min-w-0">
@@ -90,7 +90,7 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
                 className={cn(
                   'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-[#16a34a] text-white'
+                    ? 'bg-[var(--color-brand-600)] text-white'
                     : 'text-gray-300 hover:bg-gray-800 hover:text-white',
                 )}
               >

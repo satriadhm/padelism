@@ -50,7 +50,7 @@ export default function RegisterPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-8">
       <Card className="w-full max-w-md" padding="lg">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#16a34a]">
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-brand-600)]">
             <span className="text-2xl font-bold text-white">P</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Buat Akun Baru</h1>
@@ -118,7 +118,7 @@ export default function RegisterPage() {
                 onClick={() => setRole('customer')}
                 className={`rounded-lg border-2 px-4 py-3 text-sm font-medium transition-colors ${
                   role === 'customer'
-                    ? 'border-[#16a34a] bg-green-50 text-[#16a34a]'
+                    ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)] text-[var(--color-brand-700)]'
                     : 'border-gray-200 text-gray-600 hover:border-gray-300'
                 }`}
               >
@@ -129,7 +129,7 @@ export default function RegisterPage() {
                 onClick={() => setRole('venue_owner')}
                 className={`rounded-lg border-2 px-4 py-3 text-sm font-medium transition-colors ${
                   role === 'venue_owner'
-                    ? 'border-[#16a34a] bg-green-50 text-[#16a34a]'
+                    ? 'border-[var(--color-brand-600)] bg-[var(--color-brand-50)] text-[var(--color-brand-700)]'
                     : 'border-gray-200 text-gray-600 hover:border-gray-300'
                 }`}
               >
@@ -145,7 +145,7 @@ export default function RegisterPage() {
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Sudah punya akun?{' '}
-          <Link href="/login" className="font-medium text-[#16a34a] hover:underline">
+          <Link href="/login" className="font-medium text-[var(--color-brand-700)] hover:underline">
             Masuk di sini
           </Link>
         </p>

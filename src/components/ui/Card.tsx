@@ -16,7 +16,7 @@ export default function Card({ className, padding = 'md', children, ...props }: 
   return (
     <div
       className={cn(
-        'rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md',
+        'rounded-xl bg-white shadow-[var(--shadow-quiet-1)] transition-shadow hover:shadow-[var(--shadow-quiet-2)]',
         paddingMap[padding],
         className,
       )}

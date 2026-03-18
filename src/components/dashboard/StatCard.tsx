@@ -18,7 +18,7 @@ export default function StatCard({ icon, label, value, trend, className }: StatC
 
   return (
     <Card className={cn('flex items-start gap-4', className)}>
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#16a34a]/10 text-[#16a34a]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-brand-50)] text-[var(--color-brand-700)]">
         {icon}
       </div>
 

@@ -61,7 +61,7 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#16a34a] via-[#15803d] to-[#166534] px-4 pb-16 pt-12 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-brand-600)] via-[var(--color-brand-700)] to-[#0f3d27] px-4 pb-16 pt-12 text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white" />
           <div className="absolute -bottom-10 -left-10 h-60 w-60 rounded-full bg-white" />
@@ -85,7 +85,7 @@ export default async function HomePage() {
               <span className="text-left text-gray-500">
                 Cari venue, olahraga, atau kota...
               </span>
-              <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[#16a34a]" />
+              <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[var(--color-brand-700)]" />
             </Link>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default async function HomePage() {
             <h2 className="text-lg font-bold text-gray-900">Venue Populer</h2>
             <Link
               href="/venues"
-              className="flex items-center gap-1 text-sm font-medium text-[#16a34a] hover:underline"
+              className="flex items-center gap-1 text-sm font-medium text-[var(--color-brand-700)] hover:underline"
             >
               Lihat semua
               <ArrowRight className="h-4 w-4" />
