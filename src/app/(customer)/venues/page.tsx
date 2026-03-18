@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { Suspense, useEffect, useState, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, SlidersHorizontal, X, MapPin } from 'lucide-react';
 import VenueCard, { type VenueCardProps } from '@/components/marketplace/VenueCard';
@@ -18,7 +18,7 @@ const sportOptions = [
   { label: 'Tenis Meja', value: 'table-tennis' },
 ];
 
-export default function VenuesPage() {
+function VenuesContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -240,5 +240,19 @@ export default function VenuesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function VenuesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-gray-50">
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#16a34a] border-t-transparent" />
+        </div>
+      }
+    >
+      <VenuesContent />
+    </Suspense>
   );
 }

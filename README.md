@@ -110,9 +110,48 @@ After running the seed script:
 | **staff** | Check-in customers, view assigned venue bookings |
 | **customer** | Browse venues, book courts, manage own bookings |
 
-## Deployment
+## Deploy to Vercel
 
-Deploy on [Vercel](https://vercel.com) or any platform supporting Next.js. Set the required environment variables in your hosting provider's dashboard.
+### Required Environment Variables
+
+Set these in your Vercel project's **Settings → Environment Variables** before deploying:
+
+| Variable | Description |
+|----------|-------------|
+| `MONGODB_URI` | MongoDB connection string (use [MongoDB Atlas](https://www.mongodb.com/atlas) for production) |
+| `NEXTAUTH_SECRET` | Random secret — generate with `openssl rand -base64 32` |
+| `NEXTAUTH_URL` | Your deployed URL, e.g. `https://your-app.vercel.app` |
+| `MIDTRANS_SERVER_KEY` | Midtrans server key from [dashboard.midtrans.com](https://dashboard.midtrans.com) |
+| `MIDTRANS_CLIENT_KEY` | Midtrans client key from [dashboard.midtrans.com](https://dashboard.midtrans.com) |
+| `MIDTRANS_IS_PRODUCTION` | `false` for sandbox, `true` for production |
+| `SMTP_HOST` | SMTP server hostname (e.g. `smtp.gmail.com`) |
+| `SMTP_PORT` | SMTP port (e.g. `587`) |
+| `SMTP_USER` | SMTP account username / email |
+| `SMTP_PASSWORD` | SMTP account password or app password |
+
+### Deploy via Vercel Dashboard
+
+1. Push this repository to GitHub.
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
+3. Vercel auto-detects Next.js — no build settings need to change.
+4. Add all environment variables listed above under **Environment Variables**.
+5. Click **Deploy**.
+
+### Deploy via Vercel CLI
+
+```bash
+npm install -g vercel
+vercel login
+vercel                  # follow the prompts; add env vars when asked
+vercel --prod           # promote to production
+```
+
+### Configuration Notes
+
+- **MongoDB**: Use [MongoDB Atlas](https://www.mongodb.com/atlas) (free tier works). Whitelist `0.0.0.0/0` in Atlas Network Access so Vercel's dynamic IPs can connect.
+- **NextAuth**: Set `NEXTAUTH_URL` to your exact Vercel deployment URL (e.g. `https://your-app.vercel.app`). Do **not** include a trailing slash.
+- **Midtrans**: Use sandbox keys (`SB-Mid-…`) for testing; switch to production keys only when you are ready to accept real payments and set `MIDTRANS_IS_PRODUCTION=true`.
+- **SMTP**: Gmail users — create an [App Password](https://myaccount.google.com/apppasswords) and use it as `SMTP_PASSWORD`.
 
 ## License
 
