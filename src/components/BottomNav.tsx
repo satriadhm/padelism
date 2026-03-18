@@ -25,14 +25,14 @@ const customerItems: NavItem[] = [
 
 const ownerItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard className="h-5 w-5" /> },
-  { href: '/dashboard/bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
-  { href: '/dashboard/staff', label: 'Staff', icon: <Users className="h-5 w-5" /> },
+  { href: '/bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
+  { href: '/courts', label: 'Lapangan', icon: <Users className="h-5 w-5" /> },
   { href: '/profile', label: 'Profil', icon: <User className="h-5 w-5" /> },
 ];
 
 const staffItems: NavItem[] = [
-  { href: '/staff/dashboard', label: 'Dashboard', icon: <LayoutDashboard className="h-5 w-5" /> },
-  { href: '/staff/bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
+  { href: '/staff-dashboard', label: 'Dashboard', icon: <LayoutDashboard className="h-5 w-5" /> },
+  { href: '/staff-bookings', label: 'Booking', icon: <CalendarDays className="h-5 w-5" /> },
   { href: '/profile', label: 'Profil', icon: <User className="h-5 w-5" /> },
 ];
 

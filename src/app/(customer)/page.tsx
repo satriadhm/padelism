@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, MapPin, Star, ArrowRight } from 'lucide-react';
+import { MapPin, Star, ArrowRight } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import { SPORT_COLORS } from '@/lib/utils';
+import HeroSearch from '@/components/marketplace/HeroSearch';
 
 interface Sport {
   _id: string;
@@ -76,18 +77,7 @@ export default async function HomePage() {
           </p>
 
           {/* Search bar */}
-          <div className="mx-auto mt-8 max-w-2xl">
-            <Link
-              href="/venues"
-              className="flex items-center gap-3 rounded-xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur transition-shadow hover:shadow-xl"
-            >
-              <Search className="h-5 w-5 shrink-0 text-gray-400" />
-              <span className="text-left text-gray-500">
-                Cari venue, olahraga, atau kota...
-              </span>
-              <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[var(--color-brand-700)]" />
-            </Link>
-          </div>
+          <HeroSearch />
         </div>
       </section>
 

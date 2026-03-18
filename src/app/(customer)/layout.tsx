@@ -1,4 +1,5 @@
 import BottomNav from '@/components/BottomNav';
+import TopNav from '@/components/TopNav';
 
 export default function CustomerLayout({
   children,
@@ -7,6 +8,7 @@ export default function CustomerLayout({
 }) {
   return (
     <>
+      <TopNav />
       {children}
       <BottomNav role="customer" />
     </>
